@@ -1,0 +1,200 @@
+/* Style inspired by github.com, and added glassmorphism in it */
+
+:root {
+  --bg-primary: 28, 33, 40;
+  --bg-secondary: 45, 51, 59;
+
+  --bg-canvas: 34, 39, 46;
+
+  --border-color: 68, 76, 86;
+
+  --text-color-primary: 173, 186, 199;
+  --text-color-secondary: 118, 131, 144;
+
+  --bg-btn: 49, 109, 202;
+
+  --backdrop-filter: blur(10px) saturate(180%);
+}
+
+/* --------------------Reset styles-------------------- */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  font-family: "Montserrat", sans-serif;
+}
+body {
+  height: 100vh;
+  background: url("https://cdn.99images.com/photos/wallpapers/space/cool-universeandroid-iphone-desktop-hd-backgrounds-wallpapers-1080p-4k-ptk7c.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  padding: 0 16px;
+}
+
+/* --------------------Global styles-------------------- */
+.btn {
+  background: rgb(var(--bg-btn));
+  color: rgb(var(--text-color-primary));
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 10px 25px;
+}
+
+.btn--outline {
+  background: transparent;
+  border: 1px solid rgb(var(--border-color));
+}
+
+.btn--block {
+  display: block;
+  width: 100%;
+}
+
+.mr-10 {
+  margin-right: 10px;
+}
+
+/* --------------------Header styles-------------------- */
+header {
+  margin: auto -16px;
+  padding: 16px 32px;
+  backdrop-filter: var(--backdrop-filter);
+  background-color: rgba(var(--bg-secondary), 0.75);
+}
+
+header h1 {
+  color: rgb(var(--text-color-primary));
+  font-weight: 100;
+}
+
+/* --------------------Footer styles-------------------- */
+.footer {
+  display: grid;
+  place-items: center;
+  margin-top: 20px;
+}
+.footer footer {
+  background: rgb(var(--canvas-color));
+  padding: 10px;
+  color: rgb(var(--text-color-secondary));
+  position: fixed;
+  bottom: 10px;
+  border-top: 1px solid rgb(var(--border-color));
+}
+
+/* --------------------Creat Area styles-------------------- */
+.creatArea form {
+  width: 90%;
+  max-width: 480px;
+  margin: 30px auto 30px auto;
+  padding: 15px;
+  border-radius: 7px;
+  backdrop-filter: var(--backdrop-filter);
+  background-color: rgba(var(--bg-canvas), 0.75);
+  animation: borderAnimation 7s;
+  animation-iteration-count: infinite;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Border animation */
+@keyframes borderAnimation {
+  0% {
+    border: 1px solid rgb(var(--border-color));
+  }
+  50% {
+    border: 1px solid #fff;
+  }
+  100% {
+    border: 1px solid rgb(var(--border-color));
+  }
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid rgb(var(--border-color));
+  border-radius: 7px;
+  font-family: inherit;
+  font-size: 1.1em;
+  color: rgb(var(--text-color-primary));
+  resize: none;
+  margin-bottom: 10px;
+  background-color: rgba(var(--bg-primary), 0.1);
+}
+
+.creatArea__shine {
+  color: #fff;
+  position: absolute;
+  bottom: 10%;
+  animation: shiningAnimation 50s;
+  animation-iteration-count: infinite;
+  z-index: -1;
+}
+
+/* Shining animation */
+@keyframes shiningAnimation {
+  0% {
+    bottom: 10%;
+    left: -10%;
+  }
+  100% {
+    bottom: 100%;
+    left: 200%;
+  }
+}
+
+/* --------------------Notes styles-------------------- */
+.notes {
+  display: grid;
+  place-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 10px;
+}
+.note {
+  width: 90%;
+  max-width: 480px;
+  padding: 15px;
+  border: 1px solid rgb(var(--border-color));
+  border-radius: 7px;
+  backdrop-filter: var(--backdrop-filter);
+  background-color: rgba(var(--bg-canvas), 0.3);
+}
+.note h1 {
+  color: rgb(var(--text-color-primary));
+  font-size: 1.1em;
+  margin-bottom: 6px;
+}
+.note__underline {
+  width: 100%;
+  height: 1px;
+  background: rgb(var(--border-color));
+  margin: 10px 0;
+}
+.note p {
+  color: rgb(var(--text-color-secondary));
+  font-size: 1.1em;
+  margin-bottom: 20px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+/* --------------------Edit Form styles-------------------- */
+.editForm {
+  display: grid;
+  place-items: center;
+}
+.editForm form {
+  width: 90%;
+  max-width: 480px;
+  padding: 15px;
+  border: 1px solid rgb(var(--border-color));
+  border-radius: 7px;
+  backdrop-filter: var(--backdrop-filter);
+  background-color: rgba(var(--bg-canvas), 0.3);
+}
